@@ -1,0 +1,12 @@
+---
+- hosts: suse
+  become: true
+  tasks:
+
+    - name: "copy script file"
+      copy:
+        src: /var/lib/awx/projects/kaushik/suse_list.sh
+        dest: /home/integra
+
+    - name: "list updates"
+      shell: sh /home/integra/suse_list.sh
