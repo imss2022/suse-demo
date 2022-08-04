@@ -1,0 +1,19 @@
+---
+- hosts: suse
+  become: true
+  tasks:
+
+    - name: Remove sample file
+      file:
+        path: /home/integra/sample.csv
+        state: absent
+
+    - name: remove updates file
+      file:
+        path: /home/integra/updates.csv
+        state: absent
+
+    - name: reomve shell script
+      file:
+        path: /home/integra/suse_list.sh
+        state: absent
